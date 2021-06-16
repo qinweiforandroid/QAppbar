@@ -20,6 +20,7 @@ public class QToolbar extends MaterialToolbar {
     public static final int GRAVITY_CENTER = 1;
     private int titleGravity;
     private TextView mTitleLabel;
+    private CharSequence title;
 
     public QToolbar(Context context) {
         super(context);
@@ -55,11 +56,10 @@ public class QToolbar extends MaterialToolbar {
         titleGravity = a.getInteger(R.styleable.QToolbar_titleGravity, Gravity.CENTER);
         int ap = a.getResourceId(R.styleable.QToolbar_android_textAppearance, R.style.TextAppearance_AppCompat_Widget_ActionBar_Title);
         mTitleLabel.setTextAppearance(getContext(), ap);
-        CharSequence title = a.getString(R.styleable.QToolbar_label);
+        a.recycle();
         if (!TextUtils.isEmpty(title)) {
             setTitle(title);
         }
-        a.recycle();
     }
 
     /**
@@ -69,11 +69,16 @@ public class QToolbar extends MaterialToolbar {
      */
     @Override
     public void setTitle(CharSequence title) {
+        this.title=title;
         if (titleGravity == GRAVITY_CENTER) {
-            mTitleLabel.setText(title);
+            if(mTitleLabel!=null){
+                mTitleLabel.setText(title);
+            }
             super.setTitle("");
         } else {
-            mTitleLabel.setText("");
+            if(mTitleLabel!=null){
+                mTitleLabel.setText("");
+            }
             super.setTitle(title);
         }
     }

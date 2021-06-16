@@ -11,7 +11,7 @@
         style="?attr/toolbarStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:label="居中的标题"
+        app:title="居中的标题"
         app:menu="@menu/toolbar"
         app:navigationIcon="@drawable/ic_baseline_arrow_back_ios_24" />
 
@@ -20,7 +20,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        app:label="居左标题"
+        app:title="居左标题"
         app:menu="@menu/toolbar"
         app:navigationIcon="@drawable/ic_baseline_arrow_back_ios_24"
         app:titleGravity="left" />
