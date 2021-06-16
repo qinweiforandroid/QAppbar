@@ -1,15 +1,19 @@
 package com.qw.widget.appbar;
 
 import android.content.Context;
+import android.content.res.ColorStateList;
 import android.content.res.TypedArray;
 import android.text.TextUtils;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.Gravity;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 
 import com.google.android.material.appbar.MaterialToolbar;
+
+import java.lang.reflect.Field;
 
 
 /**
@@ -54,8 +58,19 @@ public class QToolbar extends MaterialToolbar {
         }
         TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.QToolbar);
         titleGravity = a.getInteger(R.styleable.QToolbar_titleGravity, Gravity.CENTER);
-        int ap = a.getResourceId(R.styleable.QToolbar_android_textAppearance, R.style.TextAppearance_AppCompat_Widget_ActionBar_Title);
-        mTitleLabel.setTextAppearance(getContext(), ap);
+        try {
+            Class<?> toolbarClazz = getClass().getSuperclass().getSuperclass();
+            Field mTitleTextAppearance =toolbarClazz.getDeclaredField("mTitleTextAppearance");
+            Field mTitleTextColor =toolbarClazz.getDeclaredField("mTitleTextColor");
+            mTitleTextAppearance.setAccessible(true);
+            mTitleTextColor.setAccessible(true);
+            mTitleLabel.setTextAppearance(getContext(), (int) mTitleTextAppearance.get(this));
+            mTitleLabel.setTextColor((ColorStateList) mTitleTextColor.get(this));
+        } catch (NoSuchFieldException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        }
         a.recycle();
         if (!TextUtils.isEmpty(title)) {
             setTitle(title);

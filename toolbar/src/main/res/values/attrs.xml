@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <declare-styleable name="QToolbar">
-        <attr name="android:textAppearance" format="reference" />
         <attr name="titleGravity" format="integer">
             <flag name="left" value="0" />
             <flag name="center" value="1" />

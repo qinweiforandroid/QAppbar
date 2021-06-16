@@ -14,13 +14,12 @@
         <!-- Customize your theme here. -->
         <item name="toolbarStyle">@style/Toolbar</item>
     </style>
-    <style name="TitleTextAppearance" parent="TextAppearance.Widget.AppCompat.Toolbar.Title"/>
-    <style name="TitleTextAppearance.PrimarySurface">
-        <item name="android:textColor">?attr/colorOnPrimary</item>
-    </style>
     <style name="Toolbar" parent="Widget.MaterialComponents.Toolbar.PrimarySurface">
-        <item name="contentInsetStart">0dp</item><!-- 设置该属性解决空白部分-->
-        <item name="android:textAppearance">@style/TitleTextAppearance.PrimarySurface</item>
+        <item name="titleTextAppearance">@style/TitleTextAppearance</item>
         <item name="titleGravity">center</item>
+    </style>
+    <style name="TitleTextAppearance">
+        <item name="android:textSize">@dimen/abc_text_size_title_material_toolbar</item>
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
     </style>
 </resources>
