@@ -7,21 +7,35 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <com.qw.widget.appbar.QToolbar
-        style="?attr/toolbarStyle"
-        android:layout_width="match_parent"
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:title="居中的标题"
-        app:menu="@menu/toolbar"
-        app:navigationIcon="@drawable/ic_baseline_arrow_back_ios_24" />
+        android:padding="8dp"
+        android:text="居左"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Overline" />
 
     <com.qw.widget.appbar.QToolbar
         style="?attr/toolbarStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        app:title="居左标题"
         app:menu="@menu/toolbar"
         app:navigationIcon="@drawable/ic_baseline_arrow_back_ios_24"
+        app:title="大家好"
         app:titleGravity="left" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:padding="8dp"
+        android:text="居中"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Overline" />
+
+    <com.qw.widget.appbar.QToolbar
+        style="?attr/toolbarStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:menu="@menu/toolbar"
+        app:navigationIcon="@drawable/ic_baseline_arrow_back_ios_24"
+        app:title="大家好" />
 </LinearLayout>

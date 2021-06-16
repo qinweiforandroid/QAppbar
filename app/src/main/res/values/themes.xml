@@ -16,10 +16,10 @@
     </style>
     <style name="Toolbar" parent="Widget.MaterialComponents.Toolbar.PrimarySurface">
         <item name="titleTextAppearance">@style/TitleTextAppearance</item>
+        <item name="titleTextColor">?attr/colorOnPrimary</item>
         <item name="titleGravity">center</item>
     </style>
     <style name="TitleTextAppearance">
         <item name="android:textSize">@dimen/abc_text_size_title_material_toolbar</item>
-        <item name="android:textColor">?android:attr/textColorPrimary</item>
     </style>
 </resources>
