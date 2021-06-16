@@ -1,4 +1,7 @@
 # QAppbar
+
+# Android Toolbar封装
+
 ## 1、QToolbar是什么
 
 标题栏控件,基于Toolbar控件封装
@@ -16,6 +19,7 @@
 
 
 效果图：
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20210616173940400.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FpbndlaTE5OTM=,size_16,color_FFFFFF,t_70)
 
 ## 2、如何使用
@@ -56,6 +60,25 @@ xml中引入com.qw.widget.appbar.QToolbar控件
 属性介绍：
 
 **app:titleGravity** 标题方向值有：left，center 默认center
+
+
+
+API： 
+
+设置文本方向
+
+```java
+public static final int GRAVITY_LEFT = 0;
+public static final int GRAVITY_CENTER = 1;
+public void setTextGravity(int gravity) {
+    this.titleGravity = gravity;
+}
+```
+设置title
+```
+public void setTitle(CharSequence title) {
+}
+```
 
 ## 3、自定义样式
 
@@ -129,3 +152,4 @@ public void setTitle(CharSequence title) {
 [qinweiforandroid/QAppbar (github.com)](https://github.com/qinweiforandroid/QAppbar)
 
 如有问题可以与我联系 QQ:435231045  请注明来源
+
